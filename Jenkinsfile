@@ -28,7 +28,7 @@ pipeline{
         
         stage("Docker Run"){
             steps{
-                sh taliai/python-demo:1.0.3
+                sh 'taliai/python-demo:1.0.3'
             }
         }
     }
