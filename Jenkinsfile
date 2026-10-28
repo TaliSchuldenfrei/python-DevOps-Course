@@ -10,7 +10,7 @@ pipeline{
         
         stage("Docker Build+Tag"){
             steps{
-                sh 'docker build -t TaliSchuldenfrei/python-demo:1.0.3 .'
+                sh 'docker build -t Taliai/python-demo:1.0.3 .'
             }
         }
         
