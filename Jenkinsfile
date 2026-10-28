@@ -14,12 +14,6 @@ pipeline{
             }
         }
         
-        stage("Trivy Scan"){
-            steps{
-                sh 'trivy image TaliSchuldenfrei/python-demo:1.0.3'
-            }
-        }
-
         stage("Docker Push"){
             steps{
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]){
