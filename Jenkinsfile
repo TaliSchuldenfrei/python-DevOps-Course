@@ -4,19 +4,19 @@ pipeline{
     stages{
         stage("Checkout Code"){
             steps{
-                git branch: 'main', url:'https://github.com/berezovsky13/python-DevOps-Course.git'
+                git branch: 'main', url:'https://github.com/TaliSchuldenfrei/python-DevOps-Course.git'
             }
         }
         
         stage("Docker Build+Tag"){
             steps{
-                sh 'docker build -t berezovsky8/python-demo:1.0.3 .'
+                sh 'docker build -t TaliSchuldenfrei/python-demo:1.0.3 .'
             }
         }
         
         stage("Trivy Scan"){
             steps{
-                sh 'trivy image berezovsky8/python-demo:1.0.3'
+                sh 'trivy image TaliSchuldenfrei/python-demo:1.0.3'
             }
         }
 
